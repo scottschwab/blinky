@@ -34,4 +34,18 @@ def test_body_validate():
     assert msg['body'] == '{ "challenge" : "{3eZbrw1aBm2rZgRNFdxV2595E9CY3gmdALWMmHkvFXO7tYXAYM8P}" }'
 
 
+def test_channel():
+    x = dict()
+    body = dict()
+    x["type"] = "message"
+    x["channel"] = "G024BE91L"
+    x["user"] = "U2147483697"
+    x["text"] = "hello world"
+    x["ts"]  = "1355517523.000005"
+    body['body'] = json.dumps(x)
+    msg = eventHandler.lambda_handler(body,None)
+    assert msg is not None
+    assert msg['statusCode'] == 200
+
+
 
