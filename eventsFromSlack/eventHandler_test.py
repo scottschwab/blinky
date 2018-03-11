@@ -31,7 +31,7 @@ def test_body_validate():
     msg = eventHandler.lambda_handler(body,None)
     assert msg is not None
     assert msg['statusCode'] == 200
-    assert msg['body'] == '{ "challenge" : "{3eZbrw1aBm2rZgRNFdxV2595E9CY3gmdALWMmHkvFXO7tYXAYM8P}" }'
+    assert msg['body'] == '{"challenge": "3eZbrw1aBm2rZgRNFdxV2595E9CY3gmdALWMmHkvFXO7tYXAYM8P"}'
 
 
 def test_determine_channel_tag():
